@@ -1,0 +1,6 @@
+@mixin menu {
+  font-size: var(--d4);
+  &:hover {
+    background-color: transparent;
+  }
+}

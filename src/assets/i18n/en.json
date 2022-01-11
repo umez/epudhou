@@ -1,0 +1,17 @@
+{
+  "HOME": {
+    "SUBTITLE": "Welcome to",
+    "TITLE": "Eputhou Marjing Khubam"
+    
+  },
+  "NAV" : {
+    "ABOUT_US": "About us",
+    "SERVICES": "Services",
+    "HISTORY": "History",
+    "DONATE": "Donate",
+    "BOOK_AN_EVENT": "Book an event",
+    "ONLINE_OFFERING": "Online offering",
+    "GALLERIES": "Galleries",
+    "CONTACT_US": "Contact us"
+  }
+}

@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="container header__main" height100 fxLayout="row" fxLayoutAlign="space-between center">
+    <div class="logo">LOGO</div>
+    <div class="header__right" height100 fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="space-between center">
+      <button (mousedown)="showMenu()" mat-icon-button mr6><mat-icon>menu</mat-icon></button>
+      <mat-icon>translate</mat-icon>
+      <mat-form-field mb0 appearance="outline">
+        <mat-select appearance="outline" (valueChange)="changeLang($event)"  [formControl]="header.lang" panelClass="header__lang">
+          <mat-option value="en">English</mat-option>
+          <mat-option value="me">Meitei</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <audio hidden #audio controls autoplay loop>
+        <source src="assets/pena.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+      <button ml4 (click)="toggleMusic(audio)" mat-icon-button>
+        <mat-icon *ngIf="header.playMusic">music_note</mat-icon>
+        <mat-icon *ngIf="!header.playMusic">music_off</mat-icon>
+      </button>
+    </div>    
+  </div>
+  <div class="header__menu" fxLayout="row" fxLayoutAlign="center" [ngClass]="{'show-menu': header.showMenu}">
+    <ul class="container" fxFlex>
+      <li py2 fxFlex *ngFor="let menu of header.menu">
+        <a class="white-link" [routerLink]="menu.url" routerLinkActive="router-link-active">{{menu.label}}</a>
+        <ul *ngIf="menu.subMenu" fxFlexLayout="column">
+          <li *ngFor="let submenu of menu.subMenu">
+            <a class="white-link" [routerLink]="submenu.url">{{submenu.label}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>

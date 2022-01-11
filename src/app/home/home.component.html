@@ -1,0 +1,31 @@
+<div class="home-screen">
+  <section class="home-screen__sec-welcome" fxLayout="column" fxLayoutAlign="space-between center">
+    <div></div>
+    <div fxLayout="column" fxLayoutAlign="space-between start" class="container home-screen__img-bg">
+      <h3>{{"HOME.SUBTITLE" | translate}}</h3>    
+      <h1>{{"HOME.TITLE" | translate}}</h1>
+    </div>
+    <nav class="container">
+      <ul fxFlex="row">
+        <li fxFlex fxLayoutAlign="center center" *ngFor="let menu of menus">
+          <a class="white-link" name="menu.label" routerLink="menu.url">
+            {{menu.label}}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+  
+  <section class="home-screen__sec-about">
+    <div class="container" height100 fxLayout="column"  fxLayoutAlign="center center">
+      <h2>Brief explanation with big background image</h2>
+    </div>
+  </section>
+  
+  <section class="home-screen__sec-galleries">
+    <div class="container" height100 fxLayout="column"  fxLayoutAlign="center center">
+      <h2>Photo galleries</h2>
+    </div>
+  </section>
+
+</div>
