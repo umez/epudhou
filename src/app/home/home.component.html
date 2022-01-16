@@ -1,30 +1,50 @@
 <div class="home-screen">
   <section class="home-screen__sec-welcome" fxLayout="column" fxLayoutAlign="space-between center">
     <div></div>
-    <div fxLayout="column" fxLayoutAlign="space-between start" class="container home-screen__img-bg">
-      <h3>{{"HOME.SUBTITLE" | translate}}</h3>    
+    <div fxLayout="column" m2 fxLayoutAlign="space-between start" class="container home-screen__img-bg">
+      <h3>{{"HOME.SUBTITLE" | translate}}</h3>
       <h1>{{"HOME.TITLE" | translate}}</h1>
+      <h3 m0>{{"HOME.HEINGANG" | translate}}</h3>
     </div>
-    <nav class="container">
-      <ul fxFlex="row">
-        <li fxFlex fxLayoutAlign="center center" *ngFor="let menu of menus">
-          <a class="white-link" name="menu.label" routerLink="menu.url">
+    <nav class="container" m2>
+      <ul fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutAlign="space-around center">
+        <li fxLayoutAlign="center center" *ngFor="let menu of menus">
+          <a class="white-link" name="menu.label" py4 routerLink="menu.url">
             {{menu.label}}
           </a>
         </li>
       </ul>
     </nav>
   </section>
-  
+
   <section class="home-screen__sec-about">
-    <div class="container" height100 fxLayout="column"  fxLayoutAlign="center center">
-      <h2>Brief explanation with big background image</h2>
+    <div class="container" height100 fxLayout="column" fxLayoutAlign="center center">
+      <div fxLayout="row" fxLayoutGap="100px" fxLayoutAlign="center start">
+        <img src="assets/img/home001.jpg" />
+        <div class="home-screen__sec-about-content">
+          <h3>Welcome</h3>
+          <p>
+           {{"HOME.HOME_CONTENT" | translate}}
+           <br /> <br />
+           {{"HOME.HOME_CONTENT" | translate}}
+          </p>
+   
+        </div>
+
+      </div>
     </div>
   </section>
-  
+
   <section class="home-screen__sec-galleries">
-    <div class="container" height100 fxLayout="column"  fxLayoutAlign="center center">
+    <div class="container" height100 fxLayout="column" fxLayoutAlign="center start">
       <h2>Photo galleries</h2>
+      <swiper [config]="config" class="swiper">
+        <ng-template swiperSlide><img src="assets/img/slide001.jpg" /></ng-template>
+        <ng-template swiperSlide><img src="assets/img/slide002.jpg" /></ng-template>
+        <ng-template swiperSlide><img src="assets/img/slide003.jpg" /></ng-template>
+        <ng-template swiperSlide><img src="assets/img/slide004.jpg" /></ng-template>
+        <ng-template swiperSlide><img src="assets/img/slide005.jpg" /></ng-template>
+      </swiper>
     </div>
   </section>
 

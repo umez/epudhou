@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ConstantsService } from '../../constants.service';
 import { HeaderModel } from './header.model';
@@ -9,10 +9,12 @@ import { HeaderModel } from './header.model';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
 
-  header = new HeaderModel();
+  header = new HeaderModel(); 
 
+  @ViewChild('audio', { static: true })
+  audio!: HTMLAudioElement; 
 
   constructor(public translateService: TranslateService, private constantsService: ConstantsService) {
 
@@ -23,6 +25,12 @@ export class HeaderComponent implements OnInit {
     const browserLang = translateService.getBrowserLang();
     translateService.use(browserLang?.match(/en|me/) ? browserLang : 'en');
   }
+
+  ngAfterViewInit(): void {
+    // console.log(this.audio)
+    // this.audio.play();
+    // document.querySelector('audio')?.play();
+  } 
 
   ngOnInit(): void {
     this.gettranslateServicedMenu();

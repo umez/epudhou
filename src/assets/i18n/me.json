@@ -1,12 +1,18 @@
 {
   "HOME": {
     "SUBTITLE": "Welcome to manipuri",
-    "TITLE": "Eputhou Marjing Khubam",
+    "TITLE": "IPUDHOU MARJING KHUBHAM",
+    "HEINGANG": "HEINGANG",
+    "HOME_CONTENT" :"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  "NAV" : {
+    "ABOUT_US": "About us",
     "SERVICES": "Services",
     "HISTORY": "History",
     "DONATE": "Donate",
     "BOOK_AN_EVENT": "Book an event",
     "ONLINE_OFFERING": "Online offering",
-    "GALLERIES": "Galleries"
+    "GALLERIES": "Galleries",
+    "CONTACT_US": "Contact us"
   }
 }

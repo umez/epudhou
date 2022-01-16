@@ -3,14 +3,20 @@
     <div class="logo">LOGO</div>
     <div class="header__right" height100 fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="space-between center">
       <button (mousedown)="showMenu()" mat-icon-button mr6><mat-icon>menu</mat-icon></button>
-      <mat-icon>translate</mat-icon>
-      <mat-form-field mb0 appearance="outline">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>translate</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="changeLang('en')">English</button>
+        <button mat-menu-item (click)="changeLang('me')">Meitei</button>
+      </mat-menu>
+      <!-- <mat-form-field mb0 appearance="outline">
         <mat-select appearance="outline" (valueChange)="changeLang($event)"  [formControl]="header.lang" panelClass="header__lang">
           <mat-option value="en">English</mat-option>
           <mat-option value="me">Meitei</mat-option>
         </mat-select>
-      </mat-form-field>
-      <audio hidden #audio controls autoplay loop>
+      </mat-form-field> -->
+      <audio #audio hidden controls loop>
         <source src="assets/pena.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
@@ -21,7 +27,7 @@
     </div>    
   </div>
   <div class="header__menu" fxLayout="row" fxLayoutAlign="center" [ngClass]="{'show-menu': header.showMenu}">
-    <ul class="container" fxFlex>
+    <ul class="container" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutAlign.gt-sm="space-around center" fxLayoutAlign.lt-md="center start">
       <li py2 fxFlex *ngFor="let menu of header.menu">
         <a class="white-link" [routerLink]="menu.url" routerLinkActive="router-link-active">{{menu.label}}</a>
         <ul *ngIf="menu.subMenu" fxFlexLayout="column">

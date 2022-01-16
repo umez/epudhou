@@ -1,8 +1,13 @@
-import { HomeService } from './home.service';
-import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
+import { SwiperOptions } from 'swiper';
+import { TranslateService } from '@ngx-translate/core';
+
 import { Nav } from '../shared/model/nav.model';
 import { ConstantsService } from '../shared/constants.service';
+
+import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper';
+
+SwiperCore.use([Pagination, Navigation, Autoplay]);
 
 @Component({
   selector: 'app-home',
@@ -13,7 +18,21 @@ export class HomeComponent implements OnInit {
 
   constructor(private translateService: TranslateService, private constantsServices: ConstantsService) { }
   menus: Nav[] = []
-
+  config: SwiperOptions = {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    // navigation: true,
+    loop: true,
+    autoplay: true,
+    pagination: { clickable: true },
+    scrollbar: { draggable: true },
+  };
+  onSwiper(swiper: any) {
+    console.log(swiper);
+  }
+  onSlideChange() {
+    console.log('slide change');
+  }
   ngOnInit(): void {
     this.getTranslatedMenu();
   }
