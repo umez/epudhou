@@ -13,19 +13,20 @@ export class HeaderComponent  {
 
   header = new HeaderModel(); 
 
-  @ViewChild('audio', { static: true })
-  audio!: HTMLAudioElement; 
+  @ViewChild('audioRef', { static: true })
+  audioRef!: HTMLAudioElement; 
 
+  
   constructor(public translateService: TranslateService, private constantsService: ConstantsService) {
-
+    
     this.header.lang.setValue('en');
     translateService.addLangs(['en', 'me']);
     translateService.setDefaultLang('en');
-
+    
     const browserLang = translateService.getBrowserLang();
     translateService.use(browserLang?.match(/en|me/) ? browserLang : 'en');
   }
-
+  
   changeLang(evt: any): void {
     console.log(evt);
     this.translateService.use(evt)
