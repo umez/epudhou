@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { TranslateService } from '@ngx-translate/core';
-import { Nav } from "./model/nav.model";
+import { Menu } from "./components/nav/nav.model";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class ConstantsService {
 
   constructor(private translateService: TranslateService){}
 
-  get menu(): Nav[] {
+  get menu(): Menu[] {
     return [
       { label: this.translateService.instant('NAV.ABOUT_US'), url: '/about-us' },
       { label: this.translateService.instant('NAV.SERVICES'), url: '/services' },

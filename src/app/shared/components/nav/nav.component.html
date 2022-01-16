@@ -1,0 +1,10 @@
+  <ul fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutAlign.gt-sm="space-around center" fxLayoutAlign.lt-md="center start">
+    <li py2 *ngFor="let menu of nav.menu">
+      <a class="white-link" [routerLink]="menu.url" routerLinkActive="router-link-active">{{menu.label}}</a>
+      <!-- <ul *ngIf="menu.subMenu" fxFlexLayout="column">
+        <li *ngFor="let submenu of menu.subMenu">
+          <a class="white-link" [routerLink]="submenu.url">{{submenu.label}}</a>
+        </li>
+      </ul> -->
+    </li>
+  </ul>

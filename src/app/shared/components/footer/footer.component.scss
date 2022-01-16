@@ -1,0 +1,22 @@
+footer {
+  background-color: var(--ipudhou-color-black);
+  color: var(--ipudhou-color-gray-700);
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+
+}
+
+.footer__right {
+  text-align: right;
+}
+footer ::ng-deep ul {
+  border:none;
+  li a {
+    font-size: 14px;
+    word-wrap: none;
+    display: block;
+    margin-right: var(--d4);
+    color: var(--ipudhou-color-gray-700)
+  }
+} 

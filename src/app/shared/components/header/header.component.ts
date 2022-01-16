@@ -9,7 +9,7 @@ import { HeaderModel } from './header.model';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent  {
 
   header = new HeaderModel(); 
 
@@ -24,23 +24,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
     const browserLang = translateService.getBrowserLang();
     translateService.use(browserLang?.match(/en|me/) ? browserLang : 'en');
-  }
-
-  ngAfterViewInit(): void {
-    // console.log(this.audio)
-    // this.audio.play();
-    // document.querySelector('audio')?.play();
-  } 
-
-  ngOnInit(): void {
-    this.gettranslateServicedMenu();
-  }
-
-  gettranslateServicedMenu(): void {
-    this.translateService.get('NAV').subscribe( () => {
-      this.header.menu = this.constantsService.menu;
-      console.log(this.header)
-    })
   }
 
   changeLang(evt: any): void {

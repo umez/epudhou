@@ -1,11 +1,12 @@
 @import 'src/assets/styles/media-queries.scss';
 
 .header {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   // background-color: white;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   height: auto;
   position: fixed;
+  z-index: 1001;
   width: 100%;
   color: white;
   &__main {
@@ -22,56 +23,18 @@
     }
     max-height: 0;
     transition: max-height 0.3s ease-in-out;
-    ul {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      li {
-        opacity: 0.7;
-        &:hover {
-          opacity: 1;
-        }
-        a {
-          font-size: 18px;
-        }
-        ul {
-          margin-top: 12px;
-          li {
-            a{
-              font-size: 16px;
-            }
-          }
-        }
-      }
-    }
+    
     &.show-menu {
       height: auto;
       max-height: 1000px;
     } 
   }
+  app-nav {
+    display: block;
+    width: 100%;
+  }
 }
 ::ng-deep .header__right {
   opacity: 0.8;
-  mat-form-field {
-    width: 100px;
-  }
   color: white;
-  md-select {
-    background-color: white;   
-    color: black;
-  }
-  .mat-form-field-appearance-outline .mat-form-field-outline {
-    background-color: white;
-    border-radius: 5px;
-  }
-  .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 0!important
-  }
-  .mat-form-field-infix {
-    margin-bottom: 8px!important;
-  }
-  .mat-form-field-appearance-outline .mat-select-arrow-wrapper {
-    transform: translateY(-8%);
-    .mat-select-arrow {
-      color: rgba(0, 0, 0, 0.54);
-    }
-  }
 }

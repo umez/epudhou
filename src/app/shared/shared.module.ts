@@ -9,6 +9,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavComponent } from './components/nav/nav.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -17,7 +18,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NavComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +40,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderComponent,
     RouterModule,
     FooterComponent,
+    NavComponent,
     HttpClientModule,
     TranslateModule,
     FlexLayoutModule,

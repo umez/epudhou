@@ -26,16 +26,7 @@
       </button>
     </div>    
   </div>
-  <div class="header__menu" fxLayout="row" fxLayoutAlign="center" [ngClass]="{'show-menu': header.showMenu}">
-    <ul class="container" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutAlign.gt-sm="space-around center" fxLayoutAlign.lt-md="center start">
-      <li py2 fxFlex *ngFor="let menu of header.menu">
-        <a class="white-link" [routerLink]="menu.url" routerLinkActive="router-link-active">{{menu.label}}</a>
-        <ul *ngIf="menu.subMenu" fxFlexLayout="column">
-          <li *ngFor="let submenu of menu.subMenu">
-            <a class="white-link" [routerLink]="submenu.url">{{submenu.label}}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
+  <div class="header__menu container" fxLayout="row" fxLayoutAlign="center" [ngClass]="{'show-menu': header.showMenu}">
+    <app-nav></app-nav>
   </div>
 </header>

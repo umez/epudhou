@@ -1,8 +1,9 @@
+import { Menu } from './../shared/components/nav/nav.model';
 import { Component, OnInit } from '@angular/core';
 import { SwiperOptions } from 'swiper';
 import { TranslateService } from '@ngx-translate/core';
 
-import { Nav } from '../shared/model/nav.model';
+import { Nav } from '../shared/components/nav/nav.model';
 import { ConstantsService } from '../shared/constants.service';
 
 import SwiperCore, { Pagination, Navigation, Autoplay } from 'swiper';
@@ -17,7 +18,7 @@ SwiperCore.use([Pagination, Navigation, Autoplay]);
 export class HomeComponent implements OnInit {
 
   constructor(private translateService: TranslateService, private constantsServices: ConstantsService) { }
-  menus: Nav[] = []
+  menus: Menu[] = []
   config: SwiperOptions = {
     slidesPerView: 1,
     spaceBetween: 24,
