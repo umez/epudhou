@@ -76,7 +76,7 @@
 }
 section {
   width: 100%;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   color: var(--ipudhou-color-white);
 
 
