@@ -18,6 +18,7 @@
   </section>
 
   <section class="home-screen__sec-about">
+    <h2 pt8 class="container">{{"ABOUT.ABOUT_US" | translate}}</h2>
     <div class="container" height100 fxLayout="column" fxLayoutAlign="center center">
       <div fxLayout="row" fxLayoutGap="100px" fxLayoutAlign="center start">
         <img src="assets/img/home001.jpg" />
@@ -36,8 +37,8 @@
   </section>
 
   <section class="home-screen__sec-galleries">
+    <h2 class="container" pt8>{{"GALLERIES.PHOTO_GALLERIES" | translate}}</h2>
     <div class="container" height100 fxLayout="column" fxLayoutAlign="center start">
-      <h2>Photo galleries</h2>
       <swiper [config]="config" class="swiper">
         <ng-template swiperSlide><img src="assets/img/slide001.jpg" /></ng-template>
         <ng-template swiperSlide><img src="assets/img/slide002.jpg" /></ng-template>
